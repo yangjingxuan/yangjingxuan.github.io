@@ -1,0 +1,769 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Xuan's Note" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理
+1.命名规范Android开发的过程中好的命名规范显得尤为重要，好的包命名规范可以使项目代码样式统一，使程序有良好的可读性
+1.类命名 类名（首单词字母大写）
+1.activity类 命名以Activity为后缀
+1public class YunmaiA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android项目中值得注意的编码规范(一)">
+<meta property="og:url" content="http://yoursite.com/2016/04/13/Android项目中值得注意的编码规范（一）/index.html">
+<meta property="og:site_name" content="Xuan's Note">
+<meta property="og:description" content="目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理
+1.命名规范Android开发的过程中好的命名规范显得尤为重要，好的包命名规范可以使项目代码样式统一，使程序有良好的可读性
+1.类命名 类名（首单词字母大写）
+1.activity类 命名以Activity为后缀
+1public class YunmaiA">
+<meta property="og:updated_time" content="2016-04-14T03:58:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android项目中值得注意的编码规范(一)">
+<meta name="twitter:description" content="目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理
+1.命名规范Android开发的过程中好的命名规范显得尤为重要，好的包命名规范可以使项目代码样式统一，使程序有良好的可读性
+1.类命名 类名（首单词字母大写）
+1.activity类 命名以Activity为后缀
+1public class YunmaiA">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6272947223114286000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Android项目中值得注意的编码规范(一) | Xuan's Note </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Xuan's Note</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">dailay note</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android项目中值得注意的编码规范(一)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-13T20:02:49+08:00" content="2016-04-13">
+              2016-04-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/13/Android项目中值得注意的编码规范（一）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/13/Android项目中值得注意的编码规范（一）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理</p>
+<h3 id="1-命名规范"><a href="#1-命名规范" class="headerlink" title="1.命名规范"></a>1.命名规范</h3><p>Android开发的过程中好的命名规范显得尤为重要，好的包命名规范可以使项目代码样式统一，使程序有良好的可读性</p>
+<h4 id="1-类命名"><a href="#1-类命名" class="headerlink" title="1.类命名"></a>1.类命名</h4><p> 类名（首单词字母大写）</p>
+<h5 id="1-activity类"><a href="#1-activity类" class="headerlink" title="1.activity类"></a>1.activity类</h5><p> 命名以Activity为后缀</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YunmaiActivity</span> <span class="keyword">extends</span> <span class="title">DeviceBaseActivity</span></span></span><br></pre></td></tr></table></figure>
+<h5 id="2-fragment类"><a href="#2-fragment类" class="headerlink" title="2.fragment类"></a>2.fragment类</h5><p>命名以Fragment为后缀</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HomeFragment</span> <span class="keyword">extends</span> <span class="title">BaseSupportFragment</span></span></span><br></pre></td></tr></table></figure>
+<h5 id="3-service类"><a href="#3-service类" class="headerlink" title="3.service类"></a>3.service类</h5><p>命名以Service为后缀</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BleGattService</span></span></span><br></pre></td></tr></table></figure>
+<h5 id="4-adapter类"><a href="#4-adapter类" class="headerlink" title="4.adapter类"></a>4.adapter类</h5><p>命名以Adapter为后缀</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AirSelectAdapter</span> <span class="keyword">extends</span> <span class="title">BaseAdapter</span></span></span><br></pre></td></tr></table></figure>
+<h5 id="5-接口实现类"><a href="#5-接口实现类" class="headerlink" title="5.接口实现类"></a>5.接口实现类</h5><p>命名以Impl为后缀</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YunmaiServiceImpl</span> <span class="keyword">implements</span> <span class="title">YunmaiService</span></span></span><br></pre></td></tr></table></figure>
+<h5 id="6-工具类"><a href="#6-工具类" class="headerlink" title="6.工具类"></a>6.工具类</h5><p>命名以Util为后缀</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AirBoxUtil</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="2-常量命名"><a href="#2-常量命名" class="headerlink" title="2.常量命名"></a>2.常量命名</h4><p>常量名（全部大写 ，常加下划线）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SHOW_POPUP_WINDOW = <span class="number">0x1000</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DISMISS_LOADING_VIEW = <span class="number">0x1100</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SHOW_LOADING_FAIL_VIEW = <span class="number">0x1110</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="3-方法命名"><a href="#3-方法命名" class="headerlink" title="3.方法命名"></a>3.方法命名</h4><p>方法名（首字母小写，字母开头大写）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> ActionBar <span class="title">getActivityActionBar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> mActionBar;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-变量名"><a href="#4-变量名" class="headerlink" title="4. 变量名"></a>4. 变量名</h4><p>全局变量（首字母以小写m开头）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mDeviceName</span><br></pre></td></tr></table></figure></p>
+<p>局部变量（小写）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-控件缩写"><a href="#2-控件缩写" class="headerlink" title="2.控件缩写"></a>2.控件缩写</h3><p>在代码中使用到的控件应当遵守以下规范</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">控件</th>
+<th style="text-align:center">缩写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">TextView</td>
+<td style="text-align:center">Txt</td>
+</tr>
+<tr>
+<td style="text-align:center">EditText</td>
+<td style="text-align:center">Edt</td>
+</tr>
+<tr>
+<td style="text-align:center">Button</td>
+<td style="text-align:center">Btn</td>
+</tr>
+<tr>
+<td style="text-align:center">ImageButton</td>
+<td style="text-align:center">Ibtn</td>
+</tr>
+<tr>
+<td style="text-align:center">ImageView</td>
+<td style="text-align:center">Img</td>
+</tr>
+<tr>
+<td style="text-align:center">ListView</td>
+<td style="text-align:center">List</td>
+</tr>
+<tr>
+<td style="text-align:center">RadioGroup</td>
+<td style="text-align:center">Group</td>
+</tr>
+<tr>
+<td style="text-align:center">RadioButton</td>
+<td style="text-align:center">Rbtn</td>
+</tr>
+<tr>
+<td style="text-align:center">ProgressBar</td>
+<td style="text-align:center">Progress</td>
+</tr>
+<tr>
+<td style="text-align:center">SeekBar</td>
+<td style="text-align:center">Seek</td>
+</tr>
+<tr>
+<td style="text-align:center">CheckBox</td>
+<td style="text-align:center">Chk</td>
+</tr>
+<tr>
+<td style="text-align:center">Spinner</td>
+<td style="text-align:center">Spinner</td>
+</tr>
+<tr>
+<td style="text-align:center">TableLayout</td>
+<td style="text-align:center">Table</td>
+</tr>
+<tr>
+<td style="text-align:center">TableRow</td>
+<td style="text-align:center">Row</td>
+</tr>
+<tr>
+<td style="text-align:center">LinearLayout</td>
+<td style="text-align:center">Llayout</td>
+</tr>
+<tr>
+<td style="text-align:center">RelativeLayout</td>
+<td style="text-align:center">Rlayout</td>
+</tr>
+<tr>
+<td style="text-align:center">ScrollView</td>
+<td style="text-align:center">Scroll</td>
+</tr>
+<tr>
+<td style="text-align:center">SearchView</td>
+<td style="text-align:center">Search</td>
+</tr>
+<tr>
+<td style="text-align:center">TabHost</td>
+<td style="text-align:center">Host</td>
+</tr>
+<tr>
+<td style="text-align:center">TabWidget</td>
+<td style="text-align:center">Widget</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-布局缩写"><a href="#3-布局缩写" class="headerlink" title="3.布局缩写"></a>3.布局缩写</h3><p>布局的xml文件应该遵循如下规范</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">布局</th>
+<th style="text-align:center">命名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Activity</td>
+<td style="text-align:center">以activity_</td>
+</tr>
+<tr>
+<td style="text-align:center">Fragment</td>
+<td style="text-align:center">以fragment_</td>
+</tr>
+<tr>
+<td style="text-align:center">Dialog</td>
+<td style="text-align:center">以dialog_</td>
+</tr>
+<tr>
+<td style="text-align:center">ListView的item</td>
+<td style="text-align:center">以item<em>list</em></td>
+</tr>
+<tr>
+<td style="text-align:center">GridView的item</td>
+<td style="text-align:center">以item_grid</td>
+</tr>
+<tr>
+<td style="text-align:center">ListView的HeaderView</td>
+<td style="text-align:center">以header_list</td>
+</tr>
+<tr>
+<td style="text-align:center">ListView的FooterView</td>
+<td style="text-align:center">以footer_list</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/04/29/做一个“懒惰”又有效率的Android开发者/" rel="next" title="做一个“懒惰”又有效率的Android开发者">
+                <i class="fa fa-chevron-left"></i> 做一个“懒惰”又有效率的Android开发者
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/13/Android项目中值得注意的编码规范（一）/"
+           data-title="Android项目中值得注意的编码规范(一)" data-url="http://yoursite.com/2016/04/13/Android项目中值得注意的编码规范（一）/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="JingXuan Yang" />
+          <p class="site-author-name" itemprop="name">JingXuan Yang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yangjingxuan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://plus.google.com/u/0/109983645122839047888/posts" target="_blank" title="GooglePlus">
+                  
+                    <i class="fa fa-googleplus"></i>
+                  
+                  GooglePlus
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1922533815/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/791ffd3d7bb7/latest_articles" target="_blank" title="JianShu">
+                  
+                    <i class="fa fa-jianshu"></i>
+                  
+                  JianShu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-命名规范"><span class="nav-number">1.</span> <span class="nav-text">1.命名规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-类命名"><span class="nav-number">1.1.</span> <span class="nav-text">1.类命名</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-activity类"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.activity类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-fragment类"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.fragment类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-service类"><span class="nav-number">1.1.3.</span> <span class="nav-text">3.service类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-adapter类"><span class="nav-number">1.1.4.</span> <span class="nav-text">4.adapter类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-接口实现类"><span class="nav-number">1.1.5.</span> <span class="nav-text">5.接口实现类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-工具类"><span class="nav-number">1.1.6.</span> <span class="nav-text">6.工具类</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-常量命名"><span class="nav-number">1.2.</span> <span class="nav-text">2.常量命名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-方法命名"><span class="nav-number">1.3.</span> <span class="nav-text">3.方法命名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-变量名"><span class="nav-number">1.4.</span> <span class="nav-text">4. 变量名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-控件缩写"><span class="nav-number">2.</span> <span class="nav-text">2.控件缩写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-布局缩写"><span class="nav-number">3.</span> <span class="nav-text">3.布局缩写</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JingXuan Yang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yangjingxuan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
