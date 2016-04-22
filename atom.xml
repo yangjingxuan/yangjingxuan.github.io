@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-22T08:12:19.000Z</updated>
+  <updated>2016-04-22T09:54:15.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://yoursite.com/2016/04/21/Android%E5%BC%80%E5%8F%91%E4%B8%ADGit-Flow%E7%9A%84%E8%BF%90%E7%94%A8/"/>
     <id>http://yoursite.com/2016/04/21/Android开发中Git-Flow的运用/</id>
     <published>2016-04-21T07:37:24.000Z</published>
-    <updated>2016-04-22T08:12:19.000Z</updated>
+    <updated>2016-04-22T09:54:15.000Z</updated>
     
     <content type="html">&lt;p&gt;Android开发过程中运用好Git工具能让团队的效率更进一步提升&lt;br&gt;Git-Flow是一套基于Git的扩展，通过分支模型对Git进行的一套更高层的操作。Git-Flow的运用可以使版本的迭代与演化过程更加清晰，同时运用的分支功能更加明确，主干分支更清晰&lt;/p&gt;
-&lt;h3 id=&quot;Git-Flow分支&quot;&gt;&lt;a href=&quot;#Git-Flow分支&quot; class=&quot;headerlink&quot; title=&quot;Git-Flow分支&quot;&gt;&lt;/a&gt;Git-Flow分支&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/99120-07667e8f38f819e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;5大分支&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Git-Flow分支&quot;&gt;&lt;a href=&quot;#Git-Flow分支&quot; class=&quot;headerlink&quot; title=&quot;Git-Flow分支&quot;&gt;&lt;/a&gt;Git-Flow分支&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/99120-07667e8f38f819e0.png&quot; alt=&quot;5大分支&quot;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;主分支：master &lt;ul&gt;
 &lt;li&gt;只有一个主分支，所有的正式版本都应该在这个主分支上发布&lt;/li&gt;
@@ -55,11 +55,11 @@
 &lt;p&gt;这里说明一下 合并方式有两种&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;快进式合并：&lt;br&gt;由master分支直接指向develop分支，其中不会保留合并过程的开发记录&lt;/li&gt;
-&lt;li&gt;非快进式合并：&lt;br&gt;使用 &lt;code&gt;--no-ff&lt;/code&gt; 参数git会在master分支提交一个commit记录，并保留方便后续查看&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/99120-6104b020cb36da80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;两种合并方式&quot;&gt;&lt;/li&gt;
+&lt;li&gt;非快进式合并：&lt;br&gt;使用 &lt;code&gt;--no-ff&lt;/code&gt; 参数git会在master分支提交一个commit记录，并保留方便后续查看&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/99120-6104b020cb36da80.png&quot; alt=&quot;两种合并方式&quot;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;查看当前代码库状态，日志&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#代码库状态&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git status&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#代码库日志&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git &lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;代码提交&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#代码添加&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git add .&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#代码提交&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git commit -am &lt;span class=&quot;string&quot;&gt;&quot;#提交内容&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&quot;开发工具的运用（Source-Tree）&quot;&gt;&lt;a href=&quot;#开发工具的运用（Source-Tree）&quot; class=&quot;headerlink&quot; title=&quot;开发工具的运用（Source Tree）&quot;&gt;&lt;/a&gt;开发工具的运用（Source Tree）&lt;/h3&gt;&lt;p&gt;作为Git最实用的开发工具Source Tree拥有便捷的可视化操作&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/99120-e0761a2e59c53d09.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;sourceTree 可视化操作&quot;&gt;&lt;br&gt;只需要鼠标点击就能够完成以上的一系列操作，还有标签等让Git操作更加直观&lt;br&gt;&lt;a href=&quot;https://www.sourcetreeapp.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SourceTree下载&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;开发工具的运用（Source-Tree）&quot;&gt;&lt;a href=&quot;#开发工具的运用（Source-Tree）&quot; class=&quot;headerlink&quot; title=&quot;开发工具的运用（Source Tree）&quot;&gt;&lt;/a&gt;开发工具的运用（Source Tree）&lt;/h3&gt;&lt;p&gt;作为Git最实用的开发工具Source Tree拥有便捷的可视化操作&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/99120-e0761a2e59c53d09.png&quot; alt=&quot;sourceTree 可视化操作&quot;&gt;&lt;br&gt;只需要鼠标点击就能够完成以上的一系列操作，还有标签等让Git操作更加直观&lt;br&gt;&lt;a href=&quot;https://www.sourcetreeapp.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SourceTree下载&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
