@@ -314,7 +314,28 @@
 Git-Flow分支
 
 主分支：master 
+只有一个主分支，所有的正式版本都应该在这个主分支上发布
 
+
+开发分支:  develop 
+日常的开发工作都在这条开发分支上进行
+
+
+版本应急修复分支 ：hotfix   
+临时性分支：版本在上线的时候遇到紧急bug需要修复而开的分支，该分支由master分出完成后合入master与develop
+
+
+版本上线前预发布分支： release 
+临时性分支：在开发分支即将合入master分支前，需要测试进行版本测试，该分支由develop分出完成后合入master与develop
+
+
+新功能开发分支： feature 
+临时性分支：为了开发某一个特点功能的分支，由develop分出开发完成后合入
+
+
+
+Git分支上只有master与develop保持常有，其余分支均在完成自身功能后及时删除
+常
           ...
 
           <div class="post-more-link text-center">
@@ -450,7 +471,17 @@ Git-Flow分支
           
           目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理
 1.命名规范Android开发的过程中好的命名规范显得尤为重要，好的包命名规范可以使项目代码样式统一，使程序有良好的可读性
-1.类命名 类名（首单词字母大写
+1.类命名 类名（首单词字母大写）
+1.activity类 命名以Activity为后缀
+1public class YunmaiActivity extends DeviceBaseActivity
+2.fragment类命名以Fragment为后缀
+1public class HomeFragment extends BaseSupportFragment
+3.service类命名以Service为后缀
+1public class BleGattService
+4.adapter类命名以Adapter为后缀
+1public class AirSelectAdapter extends BaseAdapter
+5.接口实现类命名以Impl为后缀
+1public class YunmaiServiceImpl implem
           ...
 
           <div class="post-more-link text-center">
@@ -584,7 +615,7 @@ Git-Flow分支
       
         
           
-                                        在Android开发过程中你可能会遇到那些繁琐的重复性劳动工作，怎样减少这类重复性劳动，下面就介绍一些实用的开发小工具来提升开发过程中的效率。1.TinyPNGhttps://tinypng.com/当你发现整个程序的App包越来越大的时候
+                                        在Android开发过程中你可能会遇到那些繁琐的重复性劳动工作，怎样减少这类重复性劳动，下面就介绍一些实用的开发小工具来提升开发过程中的效率。1.TinyPNGhttps://tinypng.com/当你发现整个程序的App包越来越大的时候，程序中包含的图片资源越来越多，那么你应该考虑一下优化或压缩一下程序中所使用的图片资源。TinyPNG正是一款可以极大程度压缩png图片大小而又不会让图片质量严重损耗的小工具。2.Android Layout Finderhttps://www.buzzingandroid.com/tools/android-layout-finder/你还在为查找Android资源id，findViewById而苦恼不已？ 那么现在你可以试试这款Android Layout Finder 小工具。 在你写完Activity或Fragment布局文件后，你可以将这些布局代码黏贴到 Android Layout Finder 上，选择你需要用到的资源，这款工具能通过布局文件中定义好的资源id，统一生成find
           ...
 
           <div class="post-more-link text-center">
@@ -718,7 +749,7 @@ Git-Flow分支
       
         
           
-                                      Apple Watch在4月28号将在中国地区正式首发，在Apple Watch发售之际，让我们来盘点一下Android Wear与即将上市的Apple Watch上有哪些优秀的Apps值得我们体验。1.效率类软件Android WearWun
+                                      Apple Watch在4月28号将在中国地区正式首发，在Apple Watch发售之际，让我们来盘点一下Android Wear与即将上市的Apple Watch上有哪些优秀的Apps值得我们体验。1.效率类软件Android WearWunderlist高效云端同步Todo List神器Wunderlist可以用来记录一些行程，记事提醒，工作安排，任务管理，GTD等工作，在Android Watch上Wunderlist将会为你提供贴身的提醒功能，为你提供代办事件提醒，为你更好的规划工作安排与学习计划。Apple WatchBetterWorks实时显示最新工作进展BetterWorks是一款办公利器，当你们忙碌在工作中无暇顾及其他事情时，BetterWorks让你只需在手表滑动就能了解工作项目的最新进展，员工能通过它快速了解最新的工作内容，工作目标，并查看其他同事的工作进度。2.社交类软件Android WearWeChat Watch手表上的微信消息通知回复利器WeChat Watch包括查看微信上的消息通知，并且还能够通
           ...
 
           <div class="post-more-link text-center">
@@ -752,145 +783,13 @@ Git-Flow分支
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/03/24/手机太慢太卡？三步教你优化手机性能/" itemprop="url">
-                  手机太慢太卡？三步教你优化手机性能
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-03-24T13:59:00+08:00" content="2015-03-24">
-              2015-03-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/日常小记/" itemprop="url" rel="index">
-                    <span itemprop="name">日常小记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/03/24/手机太慢太卡？三步教你优化手机性能/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/24/手机太慢太卡？三步教你优化手机性能/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2015/03/24/手机太慢太卡？三步教你优化手机性能/" class="leancloud_visitors" data-flag-title="手机太慢太卡？三步教你优化手机性能">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          众所周知，当安卓手机使用一段时间后，随着各类应用程序的不断增多，手机也会随之变卡。
-其中伴随着各类应用程序消耗内存与各种程序不断启动的后台服务，都会造成手机系统变慢，变卡。如何让你的安卓手机不再卡顿，恢复同第一次出厂般的流畅顺滑？
-下面，就由我来介绍几款优化软件，让你的手机不再卡顿，变慢。在这之前你
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/03/24/手机太慢太卡？三步教你优化手机性能/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>

@@ -85,7 +85,7 @@
 <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Xuan's Note">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Xuan's Note">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -108,7 +108,7 @@
   };
 </script>
 
-  <title> 归档 | Xuan's Note </title>
+  <title> Xuan's Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -139,7 +139,9 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right  page-archive  ">
+  <div class="container one-collumn sidebar-position-right 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -206,186 +208,156 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
+  <section id="posts" class="posts-expand">
+    
+      
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  
+  
 
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 5 篇日志。 继续努力。
-    </span>
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
 
-      
-      
-      
-
-      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/03/24/手机太慢太卡？三步教你优化手机性能/" itemprop="url">
+                  手机太慢太卡？三步教你优化手机性能
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-03-24T13:59:00+08:00" content="2015-03-24">
+              2015-03-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/日常小记/" itemprop="url" rel="index">
+                    <span itemprop="name">日常小记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/03/24/手机太慢太卡？三步教你优化手机性能/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/24/手机太慢太卡？三步教你优化手机性能/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/03/24/手机太慢太卡？三步教你优化手机性能/" class="leancloud_visitors" data-flag-title="手机太慢太卡？三步教你优化手机性能">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
         </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
         
-            <a class="post-title-link" href="/2016/04/21/Android开发中Git-Flow的运用/" itemprop="url">
-              
-                <span itemprop="name">Android开发中Git-Flow的运用</span>
-              
+          
+          众所周知，当安卓手机使用一段时间后，随着各类应用程序的不断增多，手机也会随之变卡。
+其中伴随着各类应用程序消耗内存与各种程序不断启动的后台服务，都会造成手机系统变慢，变卡。如何让你的安卓手机不再卡顿，恢复同第一次出厂般的流畅顺滑？
+下面，就由我来介绍几款优化软件，让你的手机不再卡顿，变慢。在这之前你的手机需要获得root权限，这意味着你可以得到更多的权限对你的手机进行操作，同时你也将拥有可以授予软件root的权限。
+当你获得root权限之后，可以开始以下的剁手折腾操作了。
+1.安装Xposed框架Xposed框架是一款可以在无需修改应用程序的基础上影响应用程序运行的软件框架
+安装完Xposed框架后，在框架的基础上你可以安装各类模块服务(包括以下我要推荐的这两款必备神器（Greenify，BootManager等等)这个有点类似于IOS越狱过后的Cydia。
+
+2.安装Greenify中文有个很形象的名字–绿色守护，如同他的icon一样，轻如一片叶子般守护着你的手机。
+在选择更多应用中，添加你需要休眠的应用程序，并在试验性特性中选择工作模式为高效模式，并勾选上下方需要XPOSED的三个
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/03/24/手机太慢太卡？三步教你优化手机性能/#more" rel="contents">
+              阅读全文 &raquo;
             </a>
+          </div>
         
-      </h1>
+      
+    </div>
+    
+    <div>
+      
+    </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-04-21T15:37:24+08:00"
-              content="2016-04-21" >
-          04-21
-        </time>
-      </div>
+    <div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </article>
 
 
-
     
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/04/13/Android项目中值得注意的编码规范（一）/" itemprop="url">
-              
-                <span itemprop="name">Android项目中值得注意的编码规范(一)</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-04-13T20:02:49+08:00"
-              content="2016-04-13" >
-          04-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2015">2015</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/04/29/做一个“懒惰”又有效率的Android开发者/" itemprop="url">
-              
-                <span itemprop="name">做一个“懒惰”又有效率的Android开发者</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-04-29T17:08:00+08:00"
-              content="2015-04-29" >
-          04-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/04/01/Android-Wear与Apple-Watch智能手表上都有哪些优秀的App/" itemprop="url">
-              
-                <span itemprop="name">Android-Wear与Apple-Watch智能手表上都有哪些优秀的App</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-04-01T12:50:00+08:00"
-              content="2015-04-01" >
-          04-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
-
 
 
 
@@ -605,12 +577,6 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
-
 
   
 
