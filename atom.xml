@@ -84,9 +84,9 @@
     <link href="http://yoursite.com/2016/05/17/WebChromeClient%E5%B8%B8%E7%94%A8API%E4%B8%8E%E5%8A%9F%E8%83%BD%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/"/>
     <id>http://yoursite.com/2016/05/17/WebChromeClient常用API与功能使用详解/</id>
     <published>2016-05-17T07:58:20.000Z</published>
-    <updated>2016-08-23T03:46:48.000Z</updated>
+    <updated>2016-08-23T05:48:41.000Z</updated>
     
-    <content type="html"><![CDATA[<p>在WebView的开发过程中当你需要使用到一些高级功能可以通过设置WebChromeClient从而来辅助WebView处理 JavaScript 的对话框、网站图标、网站title、加载进度等<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>在WebView的开发过程中当你需要使用到一些高级功能可以通过设置WebChromeClient从而来辅助WebView处理 JavaScript 的对话框、网站图标、网站title、加载进度等。<br><a id="more"></a></p>
 <h5 id="WebChromeClient常用的API方法"><a href="#WebChromeClient常用的API方法" class="headerlink" title="WebChromeClient常用的API方法"></a>WebChromeClient常用的API方法</h5><h6 id="1-通知应用程序当前网页加载的进度"><a href="#1-通知应用程序当前网页加载的进度" class="headerlink" title="1.通知应用程序当前网页加载的进度"></a>1.通知应用程序当前网页加载的进度</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onProgressChanged</span><span class="params">(WebView view, <span class="keyword">int</span> newProgress)</span></span></span><br></pre></td></tr></table></figure>
 <h6 id="2-获取网页title标题"><a href="#2-获取网页title标题" class="headerlink" title="2.获取网页title标题"></a>2.获取网页title标题</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceivedTitle</span><span class="params">(WebView view, String title)</span></span></span><br></pre></td></tr></table></figure>
 <p>获取标题的时间主要取决于网页前段设置标题的位置，一般设置在页面加载前面，可以较早调用到这个函数</p>
@@ -108,7 +108,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;在WebView的开发过程中当你需要使用到一些高级功能可以通过设置WebChromeClient从而来辅助WebView处理 JavaScript 的对话框、网站图标、网站title、加载进度等&lt;br&gt;
+      &lt;p&gt;在WebView的开发过程中当你需要使用到一些高级功能可以通过设置WebChromeClient从而来辅助WebView处理 JavaScript 的对话框、网站图标、网站title、加载进度等。&lt;br&gt;
     
     </summary>
     
@@ -122,9 +122,9 @@
     <link href="http://yoursite.com/2016/04/29/Android%20WebView%20%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2016/04/29/Android WebView 项目使用总结/</id>
     <published>2016-04-29T10:43:29.000Z</published>
-    <updated>2016-08-23T03:47:47.000Z</updated>
+    <updated>2016-08-23T05:48:10.000Z</updated>
     
-    <content type="html"><![CDATA[<p>由于前段时间的项目对WebView的使用较多，因此总结一下项目中WebView的使用使用过程，以及一些值得注意的地方<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>由于前段时间的项目对WebView的使用较多，因此总结一下项目中WebView的使用使用过程，以及一些值得注意的地方。<br><a id="more"></a></p>
 <p>WebView 在大部分的WebApp中使用相当广泛，处理好WebView也是一个WebApp的关键</p>
 <p>目前的WebView是基于webkit 内核浏览器并且封装在android 的sdk 当中，并且WebView包括以下几个功能</p>
 <ul>
@@ -143,7 +143,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;由于前段时间的项目对WebView的使用较多，因此总结一下项目中WebView的使用使用过程，以及一些值得注意的地方&lt;br&gt;
+      &lt;p&gt;由于前段时间的项目对WebView的使用较多，因此总结一下项目中WebView的使用使用过程，以及一些值得注意的地方。&lt;br&gt;
     
     </summary>
     
@@ -157,9 +157,9 @@
     <link href="http://yoursite.com/2016/04/21/Android%E5%BC%80%E5%8F%91%E4%B8%ADGit-Flow%E7%9A%84%E8%BF%90%E7%94%A8/"/>
     <id>http://yoursite.com/2016/04/21/Android开发中Git-Flow的运用/</id>
     <published>2016-04-21T07:37:24.000Z</published>
-    <updated>2016-08-23T03:46:59.000Z</updated>
+    <updated>2016-08-23T05:48:25.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Android开发过程中运用好Git工具能让团队的效率更进一步提升<br>Git-Flow是一套基于Git的扩展，通过分支模型对Git进行的一套更高层的操作。Git-Flow的运用可以使版本的迭代与演化过程更加清晰，同时运用的分支功能更加明确，主干分支更清晰<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>Android开发过程中运用好Git工具能让团队的效率更进一步提升<br>Git-Flow是一套基于Git的扩展，通过分支模型对Git进行的一套更高层的操作。Git-Flow的运用可以使版本的迭代与演化过程更加清晰，同时运用的分支功能更加明确，主干分支更清晰。<br><a id="more"></a></p>
 <h3 id="Git-Flow分支"><a href="#Git-Flow分支" class="headerlink" title="Git-Flow分支"></a>Git-Flow分支</h3><p><img src="http://i3.piimg.com/110e12cc631f96b3.png" alt="5大分支"></p>
 <ul>
 <li>主分支：master <ul>
@@ -201,7 +201,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;Android开发过程中运用好Git工具能让团队的效率更进一步提升&lt;br&gt;Git-Flow是一套基于Git的扩展，通过分支模型对Git进行的一套更高层的操作。Git-Flow的运用可以使版本的迭代与演化过程更加清晰，同时运用的分支功能更加明确，主干分支更清晰&lt;br&gt;
+      &lt;p&gt;Android开发过程中运用好Git工具能让团队的效率更进一步提升&lt;br&gt;Git-Flow是一套基于Git的扩展，通过分支模型对Git进行的一套更高层的操作。Git-Flow的运用可以使版本的迭代与演化过程更加清晰，同时运用的分支功能更加明确，主干分支更清晰。&lt;br&gt;
     
     </summary>
     
@@ -215,9 +215,9 @@
     <link href="http://yoursite.com/2016/04/13/Android%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%80%BC%E5%BE%97%E6%B3%A8%E6%84%8F%E7%9A%84%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>http://yoursite.com/2016/04/13/Android项目中值得注意的编码规范（一）/</id>
     <published>2016-04-13T12:02:49.000Z</published>
-    <updated>2016-08-23T03:46:53.000Z</updated>
+    <updated>2016-08-23T05:48:33.000Z</updated>
     
-    <content type="html"><![CDATA[<p>目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理。<br><a id="more"></a></p>
 <h3 id="1-命名规范"><a href="#1-命名规范" class="headerlink" title="1.命名规范"></a>1.命名规范</h3><p>Android开发的过程中好的命名规范显得尤为重要，好的包命名规范可以使项目代码样式统一，使程序有良好的可读性</p>
 <h4 id="1-类命名"><a href="#1-类命名" class="headerlink" title="1.类命名"></a>1.类命名</h4><p> 类名（首单词字母大写）</p>
 <h5 id="1-activity类"><a href="#1-activity类" class="headerlink" title="1.activity类"></a>1.activity类</h5><p> 命名以Activity为后缀</p>
@@ -372,7 +372,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理&lt;br&gt;
+      &lt;p&gt;目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理。&lt;br&gt;
     
     </summary>
     
