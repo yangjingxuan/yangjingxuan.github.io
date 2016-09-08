@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-23T03:43:49.000Z</updated>
+  <updated>2016-09-08T10:29:38.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ImageView Scale Type 使用指南</title>
+    <link href="http://yoursite.com/2016/09/08/ImageView%20Scale%20Type%20%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>http://yoursite.com/2016/09/08/ImageView Scale Type 使用指南/</id>
+    <published>2016-09-08T10:28:16.000Z</published>
+    <updated>2016-09-08T10:29:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>如果你是刚接触ImageView 的新同学，并且你对ScaleType 这个属性难以理解其字面效果的话，那么你可以花几分钟时间看完这篇文章，然后在你现在App中使用到的ImageView中，为他们设置上ScaleType这个属性看看效果</p>
+<p>由于近期对ImageView图片缩放等展示样式使用较多，所以现将ImageView ScaleType这个属性设置样式效果展现出来</p>
+<a id="more"></a>
+<h4 id="Scalce-Type"><a href="#Scalce-Type" class="headerlink" title="Scalce Type"></a>Scalce Type</h4><p>官方对每一个Scalce Type 的设置都做了统一说明  <a href="https://developer.android.com/reference/android/widget/ImageView.ScaleType.html" target="_blank" rel="external">官方说明</a></p>
+<p>你也可以在下面的截图中看到具体的展现效果</p>
+<p><img src="http://obr1dwgsb.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-08%20%E4%B8%8B%E5%8D%885.08.59.png" alt="屏幕快照 2016-09-08 下午5.08.59"></p>
+<h5 id="Center"><a href="#Center" class="headerlink" title="Center"></a>Center</h5><p>图片以原图的几何中心点和ImagView的几何中心点为基准，按图片的原来大小居中显示，不进行缩放</p>
+<p>当图片超过View的长或宽时，则截取图片居中部分，当图片小于View的长或宽时只显示图片原来的大小</p>
+<h5 id="Center-Crop"><a href="#Center-Crop" class="headerlink" title="Center Crop"></a>Center Crop</h5><p>图片以原图的几何中心点和ImagView的几何中心点为基准，将图片等比例进行放大，使得图片填充满整个View</p>
+<p>按照View的大小截取图片</p>
+<h5 id="Center-Inside"><a href="#Center-Inside" class="headerlink" title="Center Inside"></a>Center Inside</h5><p>图片以原图的几何中心点和ImagView的几何中心点为基准，将图片完整居中显示，不做任何缩放</p>
+<h5 id="Matrix"><a href="#Matrix" class="headerlink" title="Matrix"></a>Matrix</h5><p>使用ImageView默认的Matrix，不改变原图的大小，从ImageView的左上角开始绘制原图</p>
+<p>当原图超过ImageView的时则做裁剪</p>
+<h5 id="Fit-Center"><a href="#Fit-Center" class="headerlink" title="Fit Center"></a>Fit Center</h5><p>使用 <code>Matrix.ScaleToFit.CENTER</code> 对图片进行缩放</p>
+<p>将图片内容居中显示为目的，将图片进行缩放居中显示全图</p>
+<h5 id="Fit-End"><a href="#Fit-End" class="headerlink" title="Fit End"></a>Fit End</h5><p>使用 <code>Matrix.ScaleToFit.END</code> 对图片进行缩放</p>
+<p>将图片按比例缩放，在底部显示原图</p>
+<h5 id="Fix-Start"><a href="#Fix-Start" class="headerlink" title="Fix Start"></a>Fix Start</h5><p>使用<code>Matrix.ScaleToFit.START</code>对图片进行缩放</p>
+<p>将图片按比例缩放，在顶部显示原图</p>
+<h5 id="Fit-XY"><a href="#Fit-XY" class="headerlink" title="Fit XY"></a>Fit XY</h5><p>使用<code>Matrix.ScaleToFit.FILL</code> 对图片进行缩放</p>
+<p>不保持比例，将图片直接填充铺满整个View</p>
+<h4 id="Adjust-View-Bounds"><a href="#Adjust-View-Bounds" class="headerlink" title="Adjust View Bounds"></a>Adjust View Bounds</h4><p>该属性是通过一个boolean值去设置，是否保持图片原图的长宽比</p>
+<p>单独设置该属性不产生作用，需要配合maxWidth或maxHeight一起使用</p>
+<p> <img src="http://obr1dwgsb.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-08%20%E4%B8%8B%E5%8D%886.14.59.png" alt="屏幕快照 2016-09-08 下午6.14.59"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果你是刚接触ImageView 的新同学，并且你对ScaleType 这个属性难以理解其字面效果的话，那么你可以花几分钟时间看完这篇文章，然后在你现在App中使用到的ImageView中，为他们设置上ScaleType这个属性看看效果&lt;/p&gt;
+&lt;p&gt;由于近期对ImageView图片缩放等展示样式使用较多，所以现将ImageView ScaleType这个属性设置样式效果展现出来&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="开发小记" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E5%B0%8F%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>ble4.0蓝牙连接</title>
