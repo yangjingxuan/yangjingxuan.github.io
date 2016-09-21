@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-08T10:29:38.000Z</updated>
+  <updated>2016-09-21T03:10:46.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="http://yoursite.com/2016/09/08/ImageView%20Scale%20Type%20%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
     <id>http://yoursite.com/2016/09/08/ImageView Scale Type 使用指南/</id>
     <published>2016-09-08T10:28:16.000Z</published>
-    <updated>2016-09-08T10:29:38.000Z</updated>
+    <updated>2016-09-21T03:10:46.000Z</updated>
     
     <content type="html"><![CDATA[<p>如果你是刚接触ImageView 的新同学，并且你对ScaleType 这个属性难以理解其字面效果的话，那么你可以花几分钟时间看完这篇文章，然后在你现在App中使用到的ImageView中，为他们设置上ScaleType这个属性看看效果</p>
 <p>由于近期对ImageView图片缩放等展示样式使用较多，所以现将ImageView ScaleType这个属性设置样式效果展现出来</p>
-<a id="more"></a>
 <h4 id="Scalce-Type"><a href="#Scalce-Type" class="headerlink" title="Scalce Type"></a>Scalce Type</h4><p>官方对每一个Scalce Type 的设置都做了统一说明  <a href="https://developer.android.com/reference/android/widget/ImageView.ScaleType.html" target="_blank" rel="external">官方说明</a></p>
 <p>你也可以在下面的截图中看到具体的展现效果</p>
+<a id="more"></a>
 <p><img src="http://obr1dwgsb.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-08%20%E4%B8%8B%E5%8D%885.08.59.png" alt="屏幕快照 2016-09-08 下午5.08.59"></p>
 <h5 id="Center"><a href="#Center" class="headerlink" title="Center"></a>Center</h5><p>图片以原图的几何中心点和ImagView的几何中心点为基准，按图片的原来大小居中显示，不进行缩放</p>
 <p>当图片超过View的长或宽时，则截取图片居中部分，当图片小于View的长或宽时只显示图片原来的大小</p>
@@ -52,6 +52,8 @@
     
       &lt;p&gt;如果你是刚接触ImageView 的新同学，并且你对ScaleType 这个属性难以理解其字面效果的话，那么你可以花几分钟时间看完这篇文章，然后在你现在App中使用到的ImageView中，为他们设置上ScaleType这个属性看看效果&lt;/p&gt;
 &lt;p&gt;由于近期对ImageView图片缩放等展示样式使用较多，所以现将ImageView ScaleType这个属性设置样式效果展现出来&lt;/p&gt;
+&lt;h4 id=&quot;Scalce-Type&quot;&gt;&lt;a href=&quot;#Scalce-Type&quot; class=&quot;headerlink&quot; title=&quot;Scalce Type&quot;&gt;&lt;/a&gt;Scalce Type&lt;/h4&gt;&lt;p&gt;官方对每一个Scalce Type 的设置都做了统一说明  &lt;a href=&quot;https://developer.android.com/reference/android/widget/ImageView.ScaleType.html&quot;&gt;官方说明&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;你也可以在下面的截图中看到具体的展现效果&lt;/p&gt;
     
     </summary>
     
@@ -65,10 +67,11 @@
     <link href="http://yoursite.com/2016/08/20/BLE%204.0%E8%93%9D%E7%89%99%E8%BF%9E%E6%8E%A5/"/>
     <id>http://yoursite.com/2016/08/20/BLE 4.0蓝牙连接/</id>
     <published>2016-08-20T08:31:10.000Z</published>
-    <updated>2016-08-23T03:43:49.000Z</updated>
+    <updated>2016-09-21T03:10:31.000Z</updated>
     
-    <content type="html"><![CDATA[<p>从Android4.3(API 18) 开始，google开始引入低功耗蓝牙即蓝牙4.0模块，并提供了发现蓝牙，查询蓝牙Services和读写蓝牙特征值等api。 相比之前的传统蓝牙，低功耗蓝牙能显著的降低蓝牙设备功耗。<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>从Android4.3(API 18) 开始，google开始引入低功耗蓝牙即蓝牙4.0模块，并提供了发现蓝牙，查询蓝牙Services和读写蓝牙特征值等api。 相比之前的传统蓝牙，低功耗蓝牙能显著的降低蓝牙设备功耗。</p>
 <h5 id="关键名词解析"><a href="#关键名词解析" class="headerlink" title="关键名词解析"></a>关键名词解析</h5><p>GATT :  GATT是一个通过的规范，ble上层的协议都是基于GATT，通过BLE连接发送与接收称为“属性”的数据块。目前所有的ble应用都是基于GATT。（这个通用的规范是指蓝牙设备如何在特定的应用程序中工作的规格说明）</p>
+<a id="more"></a>
 <p>ATT : GATT是在ATT协议的基础上建立的。ATT对BLE设备上的运行进行了优化，它使用了尽可能少的字节。每一个“属性”通过一个唯一的统一标识符uuid进行标识，每一个String类型的UUID使用128bit标准格式。“属性”通过ATT被格式化为characteristics和services。 </p>
 <p>Characteristics : 特征值，一个特征值包括一个单一变量和0到n个用来描述该特征值的变量的Descriptor。一个特征值可以被理解成一个类型或者是一个类。</p>
 <p>Descriptor : Descriptor被定义为描述特征值变量的值。例如:一个特征值可以被认为是一个可读的描述，或者一个特征值变量可以接受的范围，或者是一个特征值变量特定的测量单位。</p>
@@ -115,7 +118,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;从Android4.3(API 18) 开始，google开始引入低功耗蓝牙即蓝牙4.0模块，并提供了发现蓝牙，查询蓝牙Services和读写蓝牙特征值等api。 相比之前的传统蓝牙，低功耗蓝牙能显著的降低蓝牙设备功耗。&lt;br&gt;
+      &lt;p&gt;从Android4.3(API 18) 开始，google开始引入低功耗蓝牙即蓝牙4.0模块，并提供了发现蓝牙，查询蓝牙Services和读写蓝牙特征值等api。 相比之前的传统蓝牙，低功耗蓝牙能显著的降低蓝牙设备功耗。&lt;/p&gt;
+&lt;h5 id=&quot;关键名词解析&quot;&gt;&lt;a href=&quot;#关键名词解析&quot; class=&quot;headerlink&quot; title=&quot;关键名词解析&quot;&gt;&lt;/a&gt;关键名词解析&lt;/h5&gt;&lt;p&gt;GATT :  GATT是一个通过的规范，ble上层的协议都是基于GATT，通过BLE连接发送与接收称为“属性”的数据块。目前所有的ble应用都是基于GATT。（这个通用的规范是指蓝牙设备如何在特定的应用程序中工作的规格说明）&lt;/p&gt;
     
     </summary>
     
@@ -129,10 +133,11 @@
     <link href="http://yoursite.com/2016/05/17/WebChromeClient%E5%B8%B8%E7%94%A8API%E4%B8%8E%E5%8A%9F%E8%83%BD%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/"/>
     <id>http://yoursite.com/2016/05/17/WebChromeClient常用API与功能使用详解/</id>
     <published>2016-05-17T07:58:20.000Z</published>
-    <updated>2016-08-23T05:48:41.000Z</updated>
+    <updated>2016-09-21T03:10:59.000Z</updated>
     
-    <content type="html"><![CDATA[<p>在WebView的开发过程中当你需要使用到一些高级功能可以通过设置WebChromeClient从而来辅助WebView处理 JavaScript 的对话框、网站图标、网站title、加载进度等。<br><a id="more"></a></p>
-<h5 id="WebChromeClient常用的API方法"><a href="#WebChromeClient常用的API方法" class="headerlink" title="WebChromeClient常用的API方法"></a>WebChromeClient常用的API方法</h5><h6 id="1-通知应用程序当前网页加载的进度"><a href="#1-通知应用程序当前网页加载的进度" class="headerlink" title="1.通知应用程序当前网页加载的进度"></a>1.通知应用程序当前网页加载的进度</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onProgressChanged</span><span class="params">(WebView view, <span class="keyword">int</span> newProgress)</span></span></span><br></pre></td></tr></table></figure>
+    <content type="html"><![CDATA[<p>在WebView的开发过程中当你需要使用到一些高级功能可以通过设置WebChromeClient从而来辅助WebView处理 JavaScript 的对话框、网站图标、网站title、加载进度等。</p>
+<h5 id="WebChromeClient常用的API方法"><a href="#WebChromeClient常用的API方法" class="headerlink" title="WebChromeClient常用的API方法"></a>WebChromeClient常用的API方法</h5><h6 id="1-通知应用程序当前网页加载的进度"><a href="#1-通知应用程序当前网页加载的进度" class="headerlink" title="1.通知应用程序当前网页加载的进度"></a>1.通知应用程序当前网页加载的进度</h6><a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onProgressChanged</span><span class="params">(WebView view, <span class="keyword">int</span> newProgress)</span></span></span><br></pre></td></tr></table></figure>
 <h6 id="2-获取网页title标题"><a href="#2-获取网页title标题" class="headerlink" title="2.获取网页title标题"></a>2.获取网页title标题</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceivedTitle</span><span class="params">(WebView view, String title)</span></span></span><br></pre></td></tr></table></figure>
 <p>获取标题的时间主要取决于网页前段设置标题的位置，一般设置在页面加载前面，可以较早调用到这个函数</p>
 <h6 id="3-网页中有H5播放flash-video的时候按下全屏按钮将会调用到这个方法，一般用作设置网页播放全屏操作"><a href="#3-网页中有H5播放flash-video的时候按下全屏按钮将会调用到这个方法，一般用作设置网页播放全屏操作" class="headerlink" title="3.网页中有H5播放flash video的时候按下全屏按钮将会调用到这个方法，一般用作设置网页播放全屏操作"></a>3.网页中有H5播放flash video的时候按下全屏按钮将会调用到这个方法，一般用作设置网页播放全屏操作</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onShowCustomView</span><span class="params">(View view, CustomViewCallback callback)</span></span></span><br></pre></td></tr></table></figure>
@@ -153,7 +158,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;在WebView的开发过程中当你需要使用到一些高级功能可以通过设置WebChromeClient从而来辅助WebView处理 JavaScript 的对话框、网站图标、网站title、加载进度等。&lt;br&gt;
+      &lt;p&gt;在WebView的开发过程中当你需要使用到一些高级功能可以通过设置WebChromeClient从而来辅助WebView处理 JavaScript 的对话框、网站图标、网站title、加载进度等。&lt;/p&gt;
+&lt;h5 id=&quot;WebChromeClient常用的API方法&quot;&gt;&lt;a href=&quot;#WebChromeClient常用的API方法&quot; class=&quot;headerlink&quot; title=&quot;WebChromeClient常用的API方法&quot;&gt;&lt;/a&gt;WebChromeClient常用的API方法&lt;/h5&gt;&lt;h6 id=&quot;1-通知应用程序当前网页加载的进度&quot;&gt;&lt;a href=&quot;#1-通知应用程序当前网页加载的进度&quot; class=&quot;headerlink&quot; title=&quot;1.通知应用程序当前网页加载的进度&quot;&gt;&lt;/a&gt;1.通知应用程序当前网页加载的进度&lt;/h6&gt;
     
     </summary>
     
@@ -167,9 +173,9 @@
     <link href="http://yoursite.com/2016/04/29/Android%20WebView%20%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2016/04/29/Android WebView 项目使用总结/</id>
     <published>2016-04-29T10:43:29.000Z</published>
-    <updated>2016-08-23T05:48:10.000Z</updated>
+    <updated>2016-09-21T03:09:22.000Z</updated>
     
-    <content type="html"><![CDATA[<p>由于前段时间的项目对WebView的使用较多，因此总结一下项目中WebView的使用使用过程，以及一些值得注意的地方。<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>由于前段时间的项目对WebView的使用较多，因此总结一下项目中WebView的使用使用过程，以及一些值得注意的地方。</p>
 <p>WebView 在大部分的WebApp中使用相当广泛，处理好WebView也是一个WebApp的关键</p>
 <p>目前的WebView是基于webkit 内核浏览器并且封装在android 的sdk 当中，并且WebView包括以下几个功能</p>
 <ul>
@@ -177,6 +183,7 @@
 <li>2.可以与JavaScript代码进行交互</li>
 <li>3.webview控件可以高度进行定制</li>
 </ul>
+<a id="more"></a>
 <h4 id="在WebView使用过程中应当注意一下几点"><a href="#在WebView使用过程中应当注意一下几点" class="headerlink" title="在WebView使用过程中应当注意一下几点"></a>在WebView使用过程中应当注意一下几点</h4><h5 id="1-在AndroidManifest-xml-中添加网络访问权限"><a href="#1-在AndroidManifest-xml-中添加网络访问权限" class="headerlink" title="1. 在AndroidManifest.xml 中添加网络访问权限"></a>1. 在AndroidManifest.xml 中添加网络访问权限</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.INTERNET"</span> /&gt;</span><br></pre></td></tr></table></figure>
 <h5 id="2-在WebView中有一个辅助类WebSettings，通过他管理WebView的一些状态以及插件"><a href="#2-在WebView中有一个辅助类WebSettings，通过他管理WebView的一些状态以及插件" class="headerlink" title="2. 在WebView中有一个辅助类WebSettings，通过他管理WebView的一些状态以及插件"></a>2. 在WebView中有一个辅助类WebSettings，通过他管理WebView的一些状态以及插件</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webview启用javascript支持 用于访问页面中的javascript</span></span><br><span class="line">webSettings.setJavaScriptEnabled(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置WebView缓存模式 默认断网情况下不缓存</span></span><br><span class="line">webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);</span><br><span class="line"></span><br><span class="line"><span class="comment">//断网情况下加载本地缓存</span></span><br><span class="line">webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//让WebView支持DOM storage API</span></span><br><span class="line">webSettings.setDomStorageEnabled(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//让WebView支持缩放</span></span><br><span class="line">webSettings.setSupportZoom(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//启用WebView内置缩放功能</span></span><br><span class="line">webSettings.setBuiltInZoomControls(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//让WebView支持可任意比例缩放</span></span><br><span class="line">webSettings.setUseWideViewPort(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//让WebView支持播放插件</span></span><br><span class="line">webSettings.setPluginState(WebSettings.PluginState.ON);</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置WebView使用内置缩放机制时，是否展现在屏幕缩放控件上</span></span><br><span class="line">webSettings.setDisplayZoomControls(<span class="keyword">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置在WebView内部是否允许访问文件</span></span><br><span class="line">webSettings.setAllowFileAccess(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置WebView的访问UserAgent</span></span><br><span class="line">webSettings.setUserAgentString(WebViewUtil.getUserAgent(getActivity(), webSettings));</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置脚本是否允许自动打开弹窗</span></span><br><span class="line">webSettings.setJavaScriptCanOpenWindowsAutomatically(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加快HTML网页加载完成速度 </span></span><br><span class="line"><span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= <span class="number">19</span>) &#123;   </span><br><span class="line">    settings.setLoadsImagesAutomatically(<span class="keyword">true</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    settings.setLoadsImagesAutomatically(<span class="keyword">false</span>); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开启Application H5 Caches 功能 </span></span><br><span class="line">settings.setAppCacheEnabled(<span class="keyword">true</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置编码格式</span></span><br><span class="line">settings.setDefaultTextEncodingName(<span class="string">"utf-8"</span>);</span><br></pre></td></tr></table></figure>
 <h5 id="3-当页面需要调用我们一些原生native的功能时候，可以通过我们自定义的JS接口去实现"><a href="#3-当页面需要调用我们一些原生native的功能时候，可以通过我们自定义的JS接口去实现" class="headerlink" title="3.当页面需要调用我们一些原生native的功能时候，可以通过我们自定义的JS接口去实现"></a>3.当页面需要调用我们一些原生native的功能时候，可以通过我们自定义的JS接口去实现</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//设置WebView JavaScript接口可以供页面JS调用</span></span><br><span class="line">mWebView.addJavascriptInterface(<span class="keyword">new</span> JsInterface(), AppUtil.KEY_JS_INTERFACE_NAME);</span><br></pre></td></tr></table></figure>
@@ -188,7 +195,14 @@
     
     <summary type="html">
     
-      &lt;p&gt;由于前段时间的项目对WebView的使用较多，因此总结一下项目中WebView的使用使用过程，以及一些值得注意的地方。&lt;br&gt;
+      &lt;p&gt;由于前段时间的项目对WebView的使用较多，因此总结一下项目中WebView的使用使用过程，以及一些值得注意的地方。&lt;/p&gt;
+&lt;p&gt;WebView 在大部分的WebApp中使用相当广泛，处理好WebView也是一个WebApp的关键&lt;/p&gt;
+&lt;p&gt;目前的WebView是基于webkit 内核浏览器并且封装在android 的sdk 当中，并且WebView包括以下几个功能&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1.加载网站url和加载本地html页面&lt;/li&gt;
+&lt;li&gt;2.可以与JavaScript代码进行交互&lt;/li&gt;
+&lt;li&gt;3.webview控件可以高度进行定制&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -260,10 +274,11 @@
     <link href="http://yoursite.com/2016/04/13/Android%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%80%BC%E5%BE%97%E6%B3%A8%E6%84%8F%E7%9A%84%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>http://yoursite.com/2016/04/13/Android项目中值得注意的编码规范（一）/</id>
     <published>2016-04-13T12:02:49.000Z</published>
-    <updated>2016-08-23T05:48:33.000Z</updated>
+    <updated>2016-09-21T03:10:21.000Z</updated>
     
-    <content type="html"><![CDATA[<p>目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理。<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理。</p>
 <h3 id="1-命名规范"><a href="#1-命名规范" class="headerlink" title="1.命名规范"></a>1.命名规范</h3><p>Android开发的过程中好的命名规范显得尤为重要，好的包命名规范可以使项目代码样式统一，使程序有良好的可读性</p>
+<a id="more"></a>
 <h4 id="1-类命名"><a href="#1-类命名" class="headerlink" title="1.类命名"></a>1.类命名</h4><p> 类名（首单词字母大写）</p>
 <h5 id="1-activity类"><a href="#1-activity类" class="headerlink" title="1.activity类"></a>1.activity类</h5><p> 命名以Activity为后缀</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YunmaiActivity</span> <span class="keyword">extends</span> <span class="title">DeviceBaseActivity</span></span></span><br></pre></td></tr></table></figure>
@@ -417,7 +432,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理。&lt;br&gt;
+      &lt;p&gt;目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理。&lt;/p&gt;
+&lt;h3 id=&quot;1-命名规范&quot;&gt;&lt;a href=&quot;#1-命名规范&quot; class=&quot;headerlink&quot; title=&quot;1.命名规范&quot;&gt;&lt;/a&gt;1.命名规范&lt;/h3&gt;&lt;p&gt;Android开发的过程中好的命名规范显得尤为重要，好的包命名规范可以使项目代码样式统一，使程序有良好的可读性&lt;/p&gt;
     
     </summary>
     
@@ -452,7 +468,7 @@
     <link href="http://yoursite.com/2015/04/01/Android-Wear%E4%B8%8EApple-Watch%E6%99%BA%E8%83%BD%E6%89%8B%E8%A1%A8%E4%B8%8A%E9%83%BD%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BC%98%E7%A7%80%E7%9A%84App/"/>
     <id>http://yoursite.com/2015/04/01/Android-Wear与Apple-Watch智能手表上都有哪些优秀的App/</id>
     <published>2015-04-01T04:50:00.000Z</published>
-    <updated>2016-08-23T06:12:27.000Z</updated>
+    <updated>2016-09-21T03:09:56.000Z</updated>
     
     <content type="html"><![CDATA[<p>Apple Watch在4月28号将在中国地区正式首发，在Apple Watch发售之际，让我们来盘点一下Android Wear与即将上市的Apple Watch上有哪些优秀的Apps值得我们体验。<a id="more"></a><br><br></p><p><b>1.</b><b>效率类软件</b><a href="" target="_blank"><b></b></a></p><p>Android Wear</p><p><b><a href="https://play.google.com/store/apps/details?id=com.wunderkinder.wunderlistandroidedu" target="_blank">Wunderlist高效云端同步Todo List神器</a></b><b></b></p><p>Wunderlist可以用来记录一些行程，记事提醒，工作安排，任务管理，GTD等工作，在Android Watch上Wunderlist将会为你提供贴身的提醒功能，为你提供代办事件提醒，为你更好的规划工作安排与学习计划。</p><p><br></p><div class="image-package"><img src="http://i4.piimg.com/26c74718944985fb.jpg" data-original-src="http://upload-images.jianshu.io/upload_images/99120-df5bd12e40dbeb3f.jpg" data-image-slug="df5bd12e40dbeb3f" data-width="480" data-height="479"><br><div class="image-caption"></div></div><p>Apple Watch</p><p><b><a href="http://www.betterworks.com/" target="_blank">BetterWorks实时显示最新工作进展</a></b><b></b></p><p>BetterWorks是一款办公利器，当你们忙碌在工作中无暇顾及其他事情时，BetterWorks让你只需在手表滑动就能了解工作项目的最新进展，员工能通过它快速了解最新的工作内容，工作目标，并查看其他同事的工作进度。</p><p><br></p><div class="image-package"><img src="http://i4.piimg.com/782415a0719bcefa.jpg" data-original-src="http://upload-images.jianshu.io/upload_images/99120-9b2b4c95cbae92a7.jpg" data-image-slug="9b2b4c95cbae92a7" data-width="469" data-height="433"><br><div class="image-caption"></div></div><p>2.社交类软件</p><p><b></b></p><p>Android Wear</p><p><b><a href="https://play.google.com/store/apps/details?id=com.tencent.mm" target="_blank">WeChat Watch手表上的微信消息通知回复利器</a></b><b></b></p><p>WeChat Watch包括查看微信上的消息通知，并且还能够通过语音快速回复对方消息，真是方便省事的微信发送与接收工具。</p><p><br></p><div class="image-package"><img src="http://i4.piimg.com/57537cd13f644696.jpg" data-original-src="http://upload-images.jianshu.io/upload_images/99120-f652394f59ae2a55.jpg" data-image-slug="f652394f59ae2a55" data-width="469" data-height="464"><br><div class="image-caption"></div></div><p>Apple Watch</p><p><b><a href="https://itunes.apple.com/tr/app/wechat/id414478124?mt=8" target="_blank">WeChat Watch的Apple Watch版本</a></b><b></b></p><p><b><br></b></p><div class="image-package"><img src="http://i4.piimg.com/b33069eaa5f34805.jpg" data-original-src="http://upload-images.jianshu.io/upload_images/99120-fb5b6340785621b0.jpg" data-image-slug="fb5b6340785621b0" data-width="402" data-height="290"><br><div class="image-caption"></div></div><p>3.健康类软件</p><p><b></b></p><p>Android Watch</p><p><b><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.fitness" target="_blank">GoogleKit优秀简约的记步与心率检测软件</a></b><b></b></p><p>GoogleKit谷歌健身是谷歌内置在Android Wear上的一款内置记步与心率检测工具，只需要你随身携带Watch就能了解你的步行运动情况，同时点击心率检测Heart rate就能检测你当前的心率状况。</p><p><br></p><div class="image-package"><img src="http://i2.piimg.com/8211f6c47293365c.jpg" data-original-src="http://upload-images.jianshu.io/upload_images/99120-3c53de3d5ef5f581.jpg" data-image-slug="3c53de3d5ef5f581" data-width="469" data-height="461"><br><div class="image-caption"></div></div><p>Apple Watch</p><p><b><a href="https://itunes.apple.com/us/app/nike+-running/id387771637?mt=8" target="_blank">Nike+ Running耐克的记步工具，记录你最新的运动信息</a></b><b></b></p><p>Nike+ Running能够追踪你的跑步数据并帮助你达成跑步目标，让你时刻把握好正确的方向，以准确的数据记录你的距离，速度与跑步时间。</p><p><br></p><div class="image-package"><img src="http://i2.piimg.com/6f1c1be5af5063b0.jpg" data-original-src="http://upload-images.jianshu.io/upload_images/99120-18c2ebe0665b6448.jpg" data-image-slug="18c2ebe0665b6448" data-width="403" data-height="398"><br><div class="image-caption"></div></div><p>4.音乐娱乐类软件</p><p><b></b></p><p>Android Wears</p><p><b><a href="https://play.google.com/store/apps/details?id=com.google.android.music" target="_blank">Google Play Music极简的设计与丰富的音乐库</a></b><b></b></p><p>Google Play Music是谷歌推出的自家的在线音乐播放器，通过Android Watch内置的Play Music可以通过手表播放你手机上Google Play Music的音乐，拥有最新最全的音乐库，用户可以付费购买音乐并试听。</p><p>（大部分音乐提供试听，需要用户购买后才能听完整音乐）</p><p><br></p><div class="image-package"><img src="http://i2.piimg.com/cd05ab9a308295de.jpg" data-original-src="http://upload-images.jianshu.io/upload_images/99120-024af876c445725e.jpg" data-image-slug="024af876c445725e" data-width="425" data-height="424"><br><div class="image-caption"></div></div><p>Apple Watch</p><p><b><a href="http://www.openplanetsoftware.com/highnote/" target="_blank">Highnote强大的音乐播放器，让你自由调节音乐节奏与声调</a></b><b></b></p><p>Highnote是一款专门为音乐人与舞蹈家设计的软件，它的重点在于用户可以调节音乐播放节奏，让你的演奏或舞蹈更随心所欲，是一个适合困难独奏与掌握棘手舞蹈动作的平台。</p><p><br></p><div class="image-package"><img src="http://obr1dwgsb.bkt.clouddn.com/99120-f5c6b8be1773befd.jpg" data-original-src="http://upload-images.jianshu.io/upload_images/99120-f5c6b8be1773befd.jpg" data-image-slug="f5c6b8be1773befd" data-width="407" data-height="382"><br><div class="image-caption"></div></div><br>        <br>      <br>    <br>  <br><p></p>
 ]]></content>
@@ -473,12 +489,12 @@
     <link href="http://yoursite.com/2015/03/24/%E6%89%8B%E6%9C%BA%E5%A4%AA%E6%85%A2%E5%A4%AA%E5%8D%A1%EF%BC%9F%E4%B8%89%E6%AD%A5%E6%95%99%E4%BD%A0%E4%BC%98%E5%8C%96%E6%89%8B%E6%9C%BA%E6%80%A7%E8%83%BD/"/>
     <id>http://yoursite.com/2015/03/24/手机太慢太卡？三步教你优化手机性能/</id>
     <published>2015-03-24T05:59:00.000Z</published>
-    <updated>2016-08-23T06:11:37.000Z</updated>
+    <updated>2016-09-21T03:08:41.000Z</updated>
     
     <content type="html"><![CDATA[<p>众所周知，当安卓手机使用一段时间后，随着各类应用程序的不断增多，手机也会随之变卡。</p>
-<p>其中伴随着各类应用程序消耗内存与各种程序不断启动的后台服务，都会造成手机系统变慢，变卡。如何让你的安卓手机不再卡顿，恢复同第一次出厂般的流畅顺滑？<br><a id="more"></a></p>
+<p>其中伴随着各类应用程序消耗内存与各种程序不断启动的后台服务，都会造成手机系统变慢，变卡。如何让你的安卓手机不再卡顿，恢复同第一次出厂般的流畅顺滑？</p>
 <h4 id="下面，就由我来介绍几款优化软件，让你的手机不再卡顿，变慢。"><a href="#下面，就由我来介绍几款优化软件，让你的手机不再卡顿，变慢。" class="headerlink" title="下面，就由我来介绍几款优化软件，让你的手机不再卡顿，变慢。"></a>下面，就由我来介绍几款优化软件，让你的手机不再卡顿，变慢。</h4><p>在这之前你的手机需要获得root权限，这意味着你可以得到更多的权限对你的手机进行操作，同时你也将拥有可以授予软件root的权限。</p>
-<p>当你获得root权限之后，可以开始以下的剁手折腾操作了。</p>
+<p>当你获得root权限之后，可以开始以下的剁手折腾操作了。<br><a id="more"></a></p>
 <h4 id="1-安装Xposed框架"><a href="#1-安装Xposed框架" class="headerlink" title="1.安装Xposed框架"></a>1.<a href="http://app.flyme.cn/apps/public/detail?package_name=de.robv.android.xposed.installer" target="_blank" rel="external">安装Xposed框架</a></h4><p>Xposed框架是一款可以在无需修改应用程序的基础上影响应用程序运行的软件框架</p>
 <p>安装完Xposed框架后，在框架的基础上你可以安装各类模块服务(包括以下我要推荐的这两款必备神器（Greenify，BootManager等等)这个有点类似于IOS越狱过后的Cydia。</p>
 <p><img src="http://obr1dwgsb.bkt.clouddn.com/%E4%B8%8B%E8%BD%BD.jpeg" alt="Xposed框架"></p>
@@ -494,7 +510,9 @@
     <summary type="html">
     
       &lt;p&gt;众所周知，当安卓手机使用一段时间后，随着各类应用程序的不断增多，手机也会随之变卡。&lt;/p&gt;
-&lt;p&gt;其中伴随着各类应用程序消耗内存与各种程序不断启动的后台服务，都会造成手机系统变慢，变卡。如何让你的安卓手机不再卡顿，恢复同第一次出厂般的流畅顺滑？&lt;br&gt;
+&lt;p&gt;其中伴随着各类应用程序消耗内存与各种程序不断启动的后台服务，都会造成手机系统变慢，变卡。如何让你的安卓手机不再卡顿，恢复同第一次出厂般的流畅顺滑？&lt;/p&gt;
+&lt;h4 id=&quot;下面，就由我来介绍几款优化软件，让你的手机不再卡顿，变慢。&quot;&gt;&lt;a href=&quot;#下面，就由我来介绍几款优化软件，让你的手机不再卡顿，变慢。&quot; class=&quot;headerlink&quot; title=&quot;下面，就由我来介绍几款优化软件，让你的手机不再卡顿，变慢。&quot;&gt;&lt;/a&gt;下面，就由我来介绍几款优化软件，让你的手机不再卡顿，变慢。&lt;/h4&gt;&lt;p&gt;在这之前你的手机需要获得root权限，这意味着你可以得到更多的权限对你的手机进行操作，同时你也将拥有可以授予软件root的权限。&lt;/p&gt;
+&lt;p&gt;当你获得root权限之后，可以开始以下的剁手折腾操作了。&lt;br&gt;
     
     </summary>
     
