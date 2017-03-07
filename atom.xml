@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-21T03:10:46.000Z</updated>
+  <updated>2017-03-07T02:56:40.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,78 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android Studio 优化构建速度解决方案</title>
+    <link href="http://yoursite.com/2017/03/07/Android%20Studio%20%E4%BC%98%E5%8C%96%E6%9E%84%E5%BB%BA%E6%9E%B6%E6%9E%84%E9%80%9F%E5%BA%A6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>http://yoursite.com/2017/03/07/Android Studio 优化构建架构速度解决方案/</id>
+    <published>2017-03-07T02:54:20.000Z</published>
+    <updated>2017-03-07T02:56:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>随着项目工程的扩大，程序编译时间也越来越长，同时也影响到了我们整个开发的速度。为了提高开发效率下面将列出一些优化方案：</p>
+<blockquote>
+<p>开发的时候尽可能的使用最新设备进行开发，运行在Android7.0（API level 24）</p>
+<p>最新的Android 平台可以让你程序编译运行速度更快，如Android Runtime（ART）还有更好对multiple DEX 支持</p>
+</blockquote>
+<a id="more"></a>
+<h5 id="1-优化配置文件"><a href="#1-优化配置文件" class="headerlink" title="1.优化配置文件"></a>1.优化配置文件</h5><ul>
+<li><p>确保你的buildToolsVersion，Gradle最新</p>
+<p>Android 编译工具随着版本的更新升级会不断的进行优化，使用最新的版本来开发</p>
+<p><a href="https://developer.android.google.cn/studio/intro/update.html" target="_blank" rel="external">Android Studio and SDK tools</a></p>
+<p><a href="https://developer.android.google.cn/studio/releases/gradle-plugin.html" target="_blank" rel="external">Gradle 更新</a></p>
+</li>
+<li><p>给你的开发环境配置特定的参数</p>
+<p>大多数的配置都是在你开发正式环境版本所需要，而日常编译的时候并不用到这类配置，开启了不必要的配置会减慢你的编译速度</p>
+<p>因此需要你配置一个特定的开发环境变量，如下面代码里”dev”(开发环境),”prod”(正式环境)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">  ...</span><br><span class="line">  defaultConfig &#123;...&#125;</span><br><span class="line">  buildTypes &#123;...&#125;</span><br><span class="line">  productFlavors &#123;</span><br><span class="line">	// 可以参考如下配置</span><br><span class="line">    dev &#123;</span><br><span class="line">	  // 为了避免64k方法数限制，将开发环境的最低minSdkVersion 设置到 21以上 或更高</span><br><span class="line">      minSdkVersion 21</span><br><span class="line">      versionNameSuffix "-dev"</span><br><span class="line">      applicationIdSuffix '.dev'</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    prod &#123;</span><br><span class="line">	  // 如果编译正式环境版本使用默认配置，那么你可以置空这块代码</span><br><span class="line">	  // 但是你仍然需要创建这个变量，否则全部环境 会使用开发变量的配置</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果你已经配置了上述的环境变量，当你在开发的时候需要混合加入一些新的变量，那么你可以通过<code>flavorDimensions</code> 配置维度 如：在新的环境变量”demo”, “full” 进行添加维度</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">  ...</span><br><span class="line">  defaultConfig &#123;...&#125;</span><br><span class="line">  buildTypes &#123;...&#125;</span><br><span class="line"></span><br><span class="line">  // 定义下面你需要用到变量维度</span><br><span class="line">  // 当你使用Gradle进行合并的时候，指定你需要的环境维度</span><br><span class="line">  </span><br><span class="line">  flavorDimensions "stage", "mode"</span><br><span class="line"></span><br><span class="line">  productFlavors &#123;</span><br><span class="line">    dev &#123;</span><br><span class="line">      dimension "stage"</span><br><span class="line">      minSdkVersion 21</span><br><span class="line">      versionNameSuffix "-dev"</span><br><span class="line">      applicationIdSuffix '.dev'</span><br><span class="line">      ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    prod &#123;</span><br><span class="line">      dimension "stage"</span><br><span class="line">      ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    demo &#123;</span><br><span class="line">      dimension "mode"</span><br><span class="line">      ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    full &#123;</span><br><span class="line">      dimension "mode"</span><br><span class="line">      ...</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="2-避免编译不必要的资源"><a href="#2-避免编译不必要的资源" class="headerlink" title="2.避免编译不必要的资源"></a>2.避免编译不必要的资源</h5><p>在开发环境编译的时候，你可以选定一种语言与一个屏幕分辨率参数，如下面</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">  ...</span><br><span class="line">  productFlavors &#123;</span><br><span class="line">    dev &#123;</span><br><span class="line">      ...</span><br><span class="line">      resConfigs "en", "xxhdpi"</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3-开发版本编译关闭奔溃分析日志"><a href="#3-开发版本编译关闭奔溃分析日志" class="headerlink" title="3.开发版本编译关闭奔溃分析日志"></a>3.开发版本编译关闭奔溃分析日志</h5><p>如果你不需要奔溃分析日志报告，你可以直接关闭</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">  ...</span><br><span class="line">  buildTypes &#123;</span><br><span class="line">    debug &#123;</span><br><span class="line">      ext.enableCrashlytics = false</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="4-使用静态配置值在你调试编译时"><a href="#4-使用静态配置值在你调试编译时" class="headerlink" title="4.使用静态配置值在你调试编译时"></a>4.使用静态配置值在你调试编译时</h5><p>当你在编译生成正式版本的时候会用到动态版本代码，版本名称，资源等，这些动态生成的配置参数可以在调试运行时候隔离他们，使用静态的配置值进行debug 版本编译，如下面的代码：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">int MILLIS_IN_MINUTE = 1000 * 60</span><br><span class="line">int minutesSinceEpoch = System.currentTimeMillis() / MILLIS_IN_MINUTE</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    ...</span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        // 默认使用版本静态值</span><br><span class="line">        versionCode 1</span><br><span class="line">        versionName "1.0"</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	// 这些动态值将在你编译正式版本时候生效</span><br><span class="line">    applicationVariants.all &#123; variant -&gt;</span><br><span class="line">        if (variant.buildType.name == "release") &#123;</span><br><span class="line">            variant.mergedFlavor.versionCode = minutesSinceEpoch;</span><br><span class="line">            variant.mergedFlavor.versionName = minutesSinceEpoch + "-" + variant.flavorName;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="5-使用静态依赖版本值"><a href="#5-使用静态依赖版本值" class="headerlink" title="5.使用静态依赖版本值"></a>5.使用静态依赖版本值</h5><p>诸如<code>com.android.tools.build:gradle:2.+</code>可以在编译调试的时候使用当前固定版本值替换</p>
+<h5 id="6-配置DexOptions与启用-Library-per-dexing"><a href="#6-配置DexOptions与启用-Library-per-dexing" class="headerlink" title="6.配置DexOptions与启用 Library per-dexing"></a>6.配置DexOptions与启用 Library per-dexing</h5><ul>
+<li><p>Library per-dexing </p>
+<p>使用预生成库进行增量更新</p>
+</li>
+<li><p>maxProcessCount</p>
+<p>设置最大的线程数</p>
+</li>
+<li><p>javaMaxHeapSize</p>
+<p>设置最大堆空间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">  ...</span><br><span class="line">  dexOptions &#123;</span><br><span class="line">    preDexLibraries true</span><br><span class="line">    maxProcessCount 8</span><br><span class="line">    javaMaxHeapSize &quot;2048m&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="7-增大Gradle编译堆栈空间"><a href="#7-增大Gradle编译堆栈空间" class="headerlink" title="7.增大Gradle编译堆栈空间"></a>7.增大Gradle编译堆栈空间</h5><p>如在你的 <code>gradle.properties</code> 文件下 增大设置堆栈空间</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.gradle.jvmargs = -Xmx2048m</span><br></pre></td></tr></table></figure>
+<h5 id="8-使用WebP-图片格式"><a href="#8-使用WebP-图片格式" class="headerlink" title="8.使用WebP 图片格式"></a>8.使用WebP 图片格式</h5><p>将PNG图片转换成WebP </p>
+<h5 id="9-禁用PNG图片处理"><a href="#9-禁用PNG图片处理" class="headerlink" title="9.禁用PNG图片处理"></a>9.禁用PNG图片处理</h5><p>如果你不想转换webp格式的图片，但是你仍旧想提高你的编译运行速度，那你可以参照如下配置 禁用PNG图片自动压缩</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">  ...</span><br><span class="line">  aaptOptions &#123;</span><br><span class="line">    cruncherEnabled false</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>提示：当你以一次构建成功后，你会发现接下来的clean build操作会越来越快（即使不使用本页的任何优化）。这个是因为Gradle 进程会有一个“热身”提高性能的过程，类似JVM进程的预热期</p>
+</blockquote>
+<p>通过本页的一些优化后，应该能为你减少编译过程的大多数时间</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;随着项目工程的扩大，程序编译时间也越来越长，同时也影响到了我们整个开发的速度。为了提高开发效率下面将列出一些优化方案：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;开发的时候尽可能的使用最新设备进行开发，运行在Android7.0（API level 24）&lt;/p&gt;
+&lt;p&gt;最新的Android 平台可以让你程序编译运行速度更快，如Android Runtime（ART）还有更好对multiple DEX 支持&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="开发小记" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E5%B0%8F%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>ImageView Scale Type 使用指南</title>
