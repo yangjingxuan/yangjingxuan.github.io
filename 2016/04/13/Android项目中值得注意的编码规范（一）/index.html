@@ -1,11 +1,138 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="JingXuan Yang"><meta name="description" content="目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理。1.命名规范Android开发的过程中好的命名规范显得尤为重要，好的包命名规范可以使项目代码样式统一，使程序有良好的可读性"><meta name="keywords" content=""><title>Android项目中值得注意的编码规范(一) · Xuan's Space</title><link rel="icon" href="/favicon.ico"><link rel="canonical" href="http://yoursite.com/2016/04/13/Android项目中值得注意的编码规范（一）/"><link rel="stylesheet" href="/fonts/iconfont/iconfont.css"><link rel="stylesheet" href="/css/style.css"><script type="text/javascript">var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?3c46e20597819e1ffd65713a4c68c477";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script></head><body><div id="main"><header><a href="/." class="logo">Xuan's Space</a><ul class="nav"><li class="nav-link"><a href="/" target="_self">Home</a></li><li class="nav-link"><a href="/archives/" target="_self">Archives</a></li><li class="nav-link"><a href="/about/" target="_self">About</a></li></ul></header><section id="container"><article class="post"><h1 class="post-title">Android项目中值得注意的编码规范(一)</h1><span class="post-time">Apr 13, 2016</span><div id="sidebar" class="post-sidebar"><h3 class="heading">Contents</h3><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-命名规范"><span class="toc-text">1.命名规范</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-类命名"><span class="toc-text">1.类命名</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-activity类"><span class="toc-text">1.activity类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-fragment类"><span class="toc-text">2.fragment类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-service类"><span class="toc-text">3.service类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-adapter类"><span class="toc-text">4.adapter类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-接口实现类"><span class="toc-text">5.接口实现类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-工具类"><span class="toc-text">6.工具类</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-常量命名"><span class="toc-text">2.常量命名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-方法命名"><span class="toc-text">3.方法命名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-变量名"><span class="toc-text">4. 变量名</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-控件缩写"><span class="toc-text">2.控件缩写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-布局缩写"><span class="toc-text">3.布局缩写</span></a></li></ol></div><div class="post-content"><p>目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理。</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Android项目中值得注意的编码规范(一)"/>
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Xuan's Space">
+
+
+
+
+
+
+<link rel="canonical" href="http://yoursite.com/2016/04/13/Android项目中值得注意的编码规范（一）/"/>
+
+
+<meta name="description" content="目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理。
+1.命名规范Android开发的过程中好的命名规范显得尤为重要，好的包命名规范可以使项目代码样式统一，使程序有良好的可读性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android项目中值得注意的编码规范(一)">
+<meta property="og:url" content="http://yoursite.com/2016/04/13/Android项目中值得注意的编码规范（一）/index.html">
+<meta property="og:site_name" content="Xuan's Space">
+<meta property="og:description" content="目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理。
+1.命名规范Android开发的过程中好的命名规范显得尤为重要，好的包命名规范可以使项目代码样式统一，使程序有良好的可读性">
+<meta property="og:updated_time" content="2016-09-21T03:10:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android项目中值得注意的编码规范(一)">
+<meta name="twitter:description" content="目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理。
+1.命名规范Android开发的过程中好的命名规范显得尤为重要，好的包命名规范可以使项目代码样式统一，使程序有良好的可读性">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=" />
+
+
+
+
+
+
+
+<script>
+  var CONFIG = {
+    search: function search() { [native code] },
+    searchPath: "/search.xml",
+    fancybox: ,
+    toc: ,
+  }
+</script>
+
+
+
+
+  
+
+
+
+    <title> Android项目中值得注意的编码规范(一) · Xuan's Space </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Xuan's Space</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Xuan's Space</a>
+</div>
+
+<nav class="site-navbar">
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Android项目中值得注意的编码规范(一)
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Apr 13, 2016
+        </span>
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-命名规范"><span class="toc-text">1.命名规范</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-类命名"><span class="toc-text">1.类命名</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-activity类"><span class="toc-text">1.activity类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-fragment类"><span class="toc-text">2.fragment类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-service类"><span class="toc-text">3.service类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-adapter类"><span class="toc-text">4.adapter类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-接口实现类"><span class="toc-text">5.接口实现类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-工具类"><span class="toc-text">6.工具类</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-常量命名"><span class="toc-text">2.常量命名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-方法命名"><span class="toc-text">3.方法命名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-变量名"><span class="toc-text">4. 变量名</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-控件缩写"><span class="toc-text">2.控件缩写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-布局缩写"><span class="toc-text">3.布局缩写</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p>目前开发Android的主流语言为Java，本文为作者针对Java开发语言以及在开发Android项目过程中碰到的一些编码规范问题做出以下整理。</p>
 <h3 id="1-命名规范"><a href="#1-命名规范" class="headerlink" title="1.命名规范"></a>1.命名规范</h3><p>Android开发的过程中好的命名规范显得尤为重要，好的包命名规范可以使项目代码样式统一，使程序有良好的可读性</p>
 <a id="more"></a>
 <h4 id="1-类命名"><a href="#1-类命名" class="headerlink" title="1.类命名"></a>1.类命名</h4><p> 类名（首单词字母大写）</p>
@@ -157,11 +284,144 @@
 </tr>
 </tbody>
 </table>
-</div></article><div class="tags"></div><div class="paginator"><a href="/2016/04/21/Android开发中Git-Flow的运用/" class="prev"><i class="iconfont icon-left"></i><span> Prev</span></a><a href="/2015/04/29/做一个“懒惰”又有效率的Android开发者/" class="next"><span>Next</span><i class="iconfont icon-right"></i></a></div><section id="comments"><div data-thread-key="http://yoursite.com/2016/04/13/Android项目中值得注意的编码规范（一）/index.html" data-title="Android项目中值得注意的编码规范(一)" data-url="http://yoursite.com/2016/04/13/Android项目中值得注意的编码规范（一）/index.html" class="ds-thread"></div><script type="text/javascript">var duoshuoQuery = {short_name: "yangjingxuan" };
-(function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();</script></section></section><footer><div class="copyright"><p class="power">Powered by <a href="https://hexo.io/">Hexo</a> and Theme by <a href="https://github.com/ahonn/hexo-theme-even"> Even</a></p><p class="since">&copy;2017<span class="heart"><i class="iconfont icon-heart"></i></span><span class="author">JingXuan Yang</span></p></div><label id="back2top"><i class="iconfont icon-up"></i></label></footer></div><script src="/js/zepto.min.js"></script><script src="/js/theme.js"></script></body></html>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/04/21/Android开发中Git-Flow的运用/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Android开发中Git-Flow的运用</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2015/04/29/做一个“懒惰”又有效率的Android开发者/">
+        <span class="next-text nav-default">做一个“懒惰”又有效率的Android开发者</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">JingXuan Yang</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+
+  
+  
+
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v="></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v="></script>
+
+    
+  <script type="text/html" id="search-result">
+    <article class="post">
+      <header class="post-header">
+        <h1 class="post-title">
+          <a href="$url$" class="post-link">
+            $title$
+          </a>
+        </h1>
+      </header>
+      <div class="post-content">
+        $content$
+        <div class="read-more">
+          <a href="$url$" class="read-more-link">
+            Read more..
+          </a>
+        </div>
+      </div>
+    </article>
+  </script>
+  <script type="text/html" id="no-search-result">
+    <div class="no-result">
+      <h2>No result found!</h2>
+    </div>
+  </script>
+  <script type="text/javascript" src="/js/src/search.js?v="></script>
+
+  </body>
+</html>

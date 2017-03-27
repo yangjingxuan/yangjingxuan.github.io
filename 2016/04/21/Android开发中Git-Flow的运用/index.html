@@ -1,11 +1,139 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="JingXuan Yang"><meta name="description" content="Android开发过程中运用好Git工具能让团队的效率更进一步提升Git-Flow是一套基于Git的扩展，通过分支模型对Git进行的一套更高层的操作。Git-Flow的运用可以使版本的迭代与演化过程更加清晰，同时运用的分支功能更加明确，主干分支更清晰。"><meta name="keywords" content=""><title>Android开发中Git-Flow的运用 · Xuan's Space</title><link rel="icon" href="/favicon.ico"><link rel="canonical" href="http://yoursite.com/2016/04/21/Android开发中Git-Flow的运用/"><link rel="stylesheet" href="/fonts/iconfont/iconfont.css"><link rel="stylesheet" href="/css/style.css"><script type="text/javascript">var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?3c46e20597819e1ffd65713a4c68c477";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script></head><body><div id="main"><header><a href="/." class="logo">Xuan's Space</a><ul class="nav"><li class="nav-link"><a href="/" target="_self">Home</a></li><li class="nav-link"><a href="/archives/" target="_self">Archives</a></li><li class="nav-link"><a href="/about/" target="_self">About</a></li></ul></header><section id="container"><article class="post"><h1 class="post-title">Android开发中Git-Flow的运用</h1><span class="post-time">Apr 21, 2016</span><div id="sidebar" class="post-sidebar"><h3 class="heading">Contents</h3><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Git-Flow分支"><span class="toc-text">Git-Flow分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开发工具的运用（Source-Tree）"><span class="toc-text">开发工具的运用（Source Tree）</span></a></li></ol></div><div class="post-content"><p>Android开发过程中运用好Git工具能让团队的效率更进一步提升<br>Git-Flow是一套基于Git的扩展，通过分支模型对Git进行的一套更高层的操作。Git-Flow的运用可以使版本的迭代与演化过程更加清晰，同时运用的分支功能更加明确，主干分支更清晰。<br><a id="more"></a></p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Android开发中Git-Flow的运用"/>
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Xuan's Space">
+
+
+
+
+
+
+<link rel="canonical" href="http://yoursite.com/2016/04/21/Android开发中Git-Flow的运用/"/>
+
+
+<meta name="description" content="Android开发过程中运用好Git工具能让团队的效率更进一步提升Git-Flow是一套基于Git的扩展，通过分支模型对Git进行的一套更高层的操作。Git-Flow的运用可以使版本的迭代与演化过程更加清晰，同时运用的分支功能更加明确，主干分支更清晰。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android开发中Git-Flow的运用">
+<meta property="og:url" content="http://yoursite.com/2016/04/21/Android开发中Git-Flow的运用/index.html">
+<meta property="og:site_name" content="Xuan's Space">
+<meta property="og:description" content="Android开发过程中运用好Git工具能让团队的效率更进一步提升Git-Flow是一套基于Git的扩展，通过分支模型对Git进行的一套更高层的操作。Git-Flow的运用可以使版本的迭代与演化过程更加清晰，同时运用的分支功能更加明确，主干分支更清晰。">
+<meta property="og:image" content="http://i3.piimg.com/110e12cc631f96b3.png">
+<meta property="og:image" content="http://i3.piimg.com/432b26a4ba9b48f1.png">
+<meta property="og:image" content="http://i3.piimg.com/020cc40596ecdc17.png">
+<meta property="og:updated_time" content="2016-08-23T05:48:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android开发中Git-Flow的运用">
+<meta name="twitter:description" content="Android开发过程中运用好Git工具能让团队的效率更进一步提升Git-Flow是一套基于Git的扩展，通过分支模型对Git进行的一套更高层的操作。Git-Flow的运用可以使版本的迭代与演化过程更加清晰，同时运用的分支功能更加明确，主干分支更清晰。">
+<meta name="twitter:image" content="http://i3.piimg.com/110e12cc631f96b3.png">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=" />
+
+
+
+
+
+
+
+<script>
+  var CONFIG = {
+    search: function search() { [native code] },
+    searchPath: "/search.xml",
+    fancybox: ,
+    toc: ,
+  }
+</script>
+
+
+
+
+  
+
+
+
+    <title> Android开发中Git-Flow的运用 · Xuan's Space </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Xuan's Space</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Xuan's Space</a>
+</div>
+
+<nav class="site-navbar">
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Android开发中Git-Flow的运用
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Apr 21, 2016
+        </span>
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Git-Flow分支"><span class="toc-text">Git-Flow分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开发工具的运用（Source-Tree）"><span class="toc-text">开发工具的运用（Source Tree）</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p>Android开发过程中运用好Git工具能让团队的效率更进一步提升<br>Git-Flow是一套基于Git的扩展，通过分支模型对Git进行的一套更高层的操作。Git-Flow的运用可以使版本的迭代与演化过程更加清晰，同时运用的分支功能更加明确，主干分支更清晰。<br><a id="more"></a></p>
 <h3 id="Git-Flow分支"><a href="#Git-Flow分支" class="headerlink" title="Git-Flow分支"></a>Git-Flow分支</h3><p><img src="http://i3.piimg.com/110e12cc631f96b3.png" alt="5大分支"></p>
 <ul>
 <li>主分支：master <ul>
@@ -43,11 +171,144 @@
 <p>查看当前代码库状态，日志<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#代码库状态</span></span><br><span class="line">git status</span><br><span class="line"><span class="comment">#代码库日志</span></span><br><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure></p>
 <p>代码提交<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#代码添加</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment">#代码提交</span></span><br><span class="line">git commit -am <span class="string">"#提交内容"</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="开发工具的运用（Source-Tree）"><a href="#开发工具的运用（Source-Tree）" class="headerlink" title="开发工具的运用（Source Tree）"></a>开发工具的运用（Source Tree）</h3><p>作为Git最实用的开发工具Source Tree拥有便捷的可视化操作<br><img src="http://i3.piimg.com/020cc40596ecdc17.png" alt="sourceTree 可视化操作"><br>只需要鼠标点击就能够完成以上的一系列操作，还有标签等让Git操作更加直观<br><a href="https://www.sourcetreeapp.com/" target="_blank" rel="external">SourceTree下载</a></p>
-</div></article><div class="tags"></div><div class="paginator"><a href="/2016/04/29/Android WebView 项目使用总结/" class="prev"><i class="iconfont icon-left"></i><span> Prev</span></a><a href="/2016/04/13/Android项目中值得注意的编码规范（一）/" class="next"><span>Next</span><i class="iconfont icon-right"></i></a></div><section id="comments"><div data-thread-key="http://yoursite.com/2016/04/21/Android开发中Git-Flow的运用/index.html" data-title="Android开发中Git-Flow的运用" data-url="http://yoursite.com/2016/04/21/Android开发中Git-Flow的运用/index.html" class="ds-thread"></div><script type="text/javascript">var duoshuoQuery = {short_name: "yangjingxuan" };
-(function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();</script></section></section><footer><div class="copyright"><p class="power">Powered by <a href="https://hexo.io/">Hexo</a> and Theme by <a href="https://github.com/ahonn/hexo-theme-even"> Even</a></p><p class="since">&copy;2017<span class="heart"><i class="iconfont icon-heart"></i></span><span class="author">JingXuan Yang</span></p></div><label id="back2top"><i class="iconfont icon-up"></i></label></footer></div><script src="/js/zepto.min.js"></script><script src="/js/theme.js"></script></body></html>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/04/29/Android WebView 项目使用总结/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Android WebView 项目使用总结</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/04/13/Android项目中值得注意的编码规范（一）/">
+        <span class="next-text nav-default">Android项目中值得注意的编码规范(一)</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">JingXuan Yang</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+
+  
+  
+
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v="></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v="></script>
+
+    
+  <script type="text/html" id="search-result">
+    <article class="post">
+      <header class="post-header">
+        <h1 class="post-title">
+          <a href="$url$" class="post-link">
+            $title$
+          </a>
+        </h1>
+      </header>
+      <div class="post-content">
+        $content$
+        <div class="read-more">
+          <a href="$url$" class="read-more-link">
+            Read more..
+          </a>
+        </div>
+      </div>
+    </article>
+  </script>
+  <script type="text/html" id="no-search-result">
+    <div class="no-result">
+      <h2>No result found!</h2>
+    </div>
+  </script>
+  <script type="text/javascript" src="/js/src/search.js?v="></script>
+
+  </body>
+</html>
