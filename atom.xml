@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangjingxuan.space/"/>
-  <updated>2018-01-29T03:24:01.000Z</updated>
+  <updated>2018-01-29T03:28:11.000Z</updated>
   <id>http://yangjingxuan.space/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yangjingxuan.space/2018/01/29/Android%20%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5/"/>
     <id>http://yangjingxuan.space/2018/01/29/Android 中常见内存泄露的几种情况/</id>
     <published>2018-01-29T03:08:00.000Z</published>
-    <updated>2018-01-29T03:24:01.000Z</updated>
+    <updated>2018-01-29T03:28:11.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Android-中常见内存泄露的几种情况"><a href="#Android-中常见内存泄露的几种情况" class="headerlink" title="Android 中常见内存泄露的几种情况"></a>Android 中常见内存泄露的几种情况</h3><p>我们在开发Android应用时，有时候会遇到程序因占用内存过高而造成的oom（out of memory），而本质的原因就是开发过程中内存使用的不合理以及应用中存在的内存泄露。<a id="more"></a></p>
 <p>我们知道Java代码本身有自己的垃圾回收机制，所以在开发的过程中我们无需特意管理内存的分配，但是它仍旧有内存泄露的风险。我们如果引用了一个已经不再使用的对象，那么java代码的垃圾回收器就会因为一直持有引用而造成内存无法被回收。纵然短期内泄露的内存不多，但是在长期的使用过程中由于内存泄露的不断发生，最终程序就会因为内存泄露而产生oom。</p>
@@ -31,15 +31,15 @@
 <p>下面就Android日常开发我列举一些常见的内存泄露情况以及避免方式</p>
 <p><img src="http://obr1dwgsb.bkt.clouddn.com/%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2.png" alt="内存泄露"></p>
 <p>上图已经整理出了常见的泄露方式还有一些需要说明的：</p>
-<h5 id="1-持有Context对象"><a href="#1-持有Context对象" class="headerlink" title="1.持有Context对象"></a>1.持有Context对象</h5><p>Android中常见的context对象主要有两种：Activity和Application，其中View对象对整个activity保持引用。</p>
+<h4 id="1-持有Context对象"><a href="#1-持有Context对象" class="headerlink" title="1.持有Context对象"></a>1.持有Context对象</h4><p>Android中常见的context对象主要有两种：Activity和Application，其中View对象对整个activity保持引用。</p>
 <p>如果有地方持有了相应的view类对象，一旦发生泄漏那么这整个Activity都会出现无法回收的情况。</p>
-<h5 id="2-线程之间Handler使用"><a href="#2-线程之间Handler使用" class="headerlink" title="2.线程之间Handler使用"></a>2.线程之间Handler使用</h5><p>Handler 本身是异步的，可以使用静态内部类弱引用处理也可以通过生命周期<code>removeCallbacksAndMessages(null);</code>进行销毁，只要及时处理Handler，泄露还是很容易修复的。</p>
-<h5 id="3-内部类与匿名内部类持有外部类对象引用"><a href="#3-内部类与匿名内部类持有外部类对象引用" class="headerlink" title="3.内部类与匿名内部类持有外部类对象引用"></a>3.内部类与匿名内部类持有外部类对象引用</h5><p>非静态内部类以及匿名内部类会持有一个隐式的强引用，如果该对象没有被回收，那么Activity 就会发生泄露。</p>
+<h4 id="2-线程之间Handler使用"><a href="#2-线程之间Handler使用" class="headerlink" title="2.线程之间Handler使用"></a>2.线程之间Handler使用</h4><p>Handler 本身是异步的，可以使用静态内部类弱引用处理也可以通过生命周期<code>removeCallbacksAndMessages(null);</code>进行销毁，只要及时处理Handler，泄露还是很容易修复的。</p>
+<h4 id="3-内部类与匿名内部类持有外部类对象引用"><a href="#3-内部类与匿名内部类持有外部类对象引用" class="headerlink" title="3.内部类与匿名内部类持有外部类对象引用"></a>3.内部类与匿名内部类持有外部类对象引用</h4><p>非静态内部类以及匿名内部类会持有一个隐式的强引用，如果该对象没有被回收，那么Activity 就会发生泄露。</p>
 <p>其本质可以通过反编译源代码，内部类对象如何访问外部类成员变量，其实是有一个指针强引用了外部类的对象。</p>
 <p>此处可以参考：<a href="http://www.cnblogs.com/dolphin0520/p/3811445.html" target="_blank" rel="external">Java内部类详解</a></p>
-<h5 id="4-最小化变量作用域"><a href="#4-最小化变量作用域" class="headerlink" title="4.最小化变量作用域"></a>4.最小化变量作用域</h5><p>变量的使用也是值得注意的一点，Java的垃圾回收器会优先在方法执行结束后进行回收，如果将函数级的变量定义到类级别上，那么也就意味着整个垃圾回收器需要等待到该类的所有引用都被回收完成后才能进行垃圾回收。势必会对内存占用造成影响。优化属性的作用域是必须的，同样这也是封装原则，最小化作用域降低了通过包访问变量并减少了耦合。</p>
-<h5 id="5-各类注册没有反注册"><a href="#5-各类注册没有反注册" class="headerlink" title="5.各类注册没有反注册"></a>5.各类注册没有反注册</h5><p>所有注册，订阅的操作都需要有一个与之相应的反注册，反订阅。</p>
-<h5 id="6-webview泄露"><a href="#6-webview泄露" class="headerlink" title="6.webview泄露"></a>6.webview泄露</h5><p>webview也是一个大量占用内存控件，如果我们不及时清理WebView的内存，那最后可能会随着内存消耗的不断增加而发生OOM导致程序崩溃。</p>
+<h4 id="4-最小化变量作用域"><a href="#4-最小化变量作用域" class="headerlink" title="4.最小化变量作用域"></a>4.最小化变量作用域</h4><p>变量的使用也是值得注意的一点，Java的垃圾回收器会优先在方法执行结束后进行回收，如果将函数级的变量定义到类级别上，那么也就意味着整个垃圾回收器需要等待到该类的所有引用都被回收完成后才能进行垃圾回收。势必会对内存占用造成影响。优化属性的作用域是必须的，同样这也是封装原则，最小化作用域降低了通过包访问变量并减少了耦合。</p>
+<h4 id="5-各类注册没有反注册"><a href="#5-各类注册没有反注册" class="headerlink" title="5.各类注册没有反注册"></a>5.各类注册没有反注册</h4><p>所有注册，订阅的操作都需要有一个与之相应的反注册，反订阅。</p>
+<h4 id="6-webview泄露"><a href="#6-webview泄露" class="headerlink" title="6.webview泄露"></a>6.webview泄露</h4><p>webview也是一个大量占用内存控件，如果我们不及时清理WebView的内存，那最后可能会随着内存消耗的不断增加而发生OOM导致程序崩溃。</p>
 ]]></content>
     
     <summary type="html">
